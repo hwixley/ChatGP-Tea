@@ -1,1 +1,5 @@
-echo $1 | grep -E '^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$'
+if [[ "$string" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
+    echo "Valid email!"
+else
+    echo "Invalid email :("
+fi
