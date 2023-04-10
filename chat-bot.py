@@ -31,7 +31,8 @@ fname = input()
 
 print(f"This script has {len(findArgs(bashCommand))} arguments.")
 
-with open(f'{fname}.sh', 'w') as f:
+fpath = f'generated-scripts/{fname}.sh'
+
+with open(fpath, 'w') as f:
     f.write(response)
-    os.system('chmod +x test.sh')
-    # os.system('./test.sh potato@gmail.com')
+    os.system(f'chmod +x {fpath}')
