@@ -13,7 +13,7 @@ class ResponseHandler():
         args_regex = "arg[0-9]"
         return re.findall(args_regex, self.response)
 
-    def save_code_blocks(self, code_blocks):
+    def save_code_blocks(self, code_blocks, parseExt="py", execExt="sh"):
         print("\nWhat would you like to call your script? (exclude the file extension)")
         fname = input()
 
@@ -25,10 +25,10 @@ class ResponseHandler():
 
         file_paths = []
         for i, code_block in enumerate(code_blocks):
-            file_paths += [f'{dirpath}/{fname}-{i}.py']
+            file_paths += [f'{dirpath}/{fname}-{i}.{parseExt}']
             self.save_file(file_paths[-1], code_block[1])
 
-        self.save_file(f'{dirpath}/{fname}.sh', f"python3 {file_paths[0]} $@")
+        self.save_file(f'{dirpath}/{fname}.{execExt}', f"python3 {file_paths[0]} $@")
 
     def save_file(self, file_path, file_content):
         with open(file_path, 'w') as f:
