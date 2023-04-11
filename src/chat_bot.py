@@ -23,7 +23,7 @@ class Main():
             print(f"\nResponse:\n{response}")
             sys.exit()
         else:
-            responseHandler.save_code_blocks(code_blocks, responseHandler)
+            responseHandler.save_code_blocks(code_blocks)
             print(f"\nResponse:\n{response}")
 
 

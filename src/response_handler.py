@@ -21,7 +21,7 @@ class ResponseHandler():
         print(f"\nThis script has {num_args} arguments.")
 
         dirpath = f'generated-scripts/{fname}'
-        os.system(dirpath)
+        os.system(f"mkdir {dirpath}")
 
         file_paths = []
         for i, code_block in enumerate(code_blocks):
