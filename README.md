@@ -1,4 +1,5 @@
-# Chat gpTea - a CLI for talking to ChatGPT and turning code blocks into executable code
+# ChatGPTea CLI ☕️
+A CLI for talking to ChatGPT, and turning code blocks from it's responses into executable shell commands.
 
 ## Setup
 
@@ -11,3 +12,5 @@
    ```
    echo "" >> ~/.bashrc && echo "alias gptea=\"source $(pwd)/chatBot.sh\"" >> ~/.bashrc
    ```
+
+3. You are good to go! :)
