@@ -21,6 +21,6 @@ A CLI for talking to ChatGPT, and turning code blocks (language agnostic) from i
 <br>
 2. `ask` : ask ChatGPT a question without saving any files.
 <br>
-3. `lang <lang-name>` : ask ChatGPT to create a bash script that uses the input language (`<lang-name>`) under the hood.
-<br>
-Available `<lang-name>` values: `python`, `bash`, `javascript`, `typescript`, `java`, `c`, `c++`, `c#`, `rust`, `swift`, `go`, `ruby`, `php`
+3. `lang <lang-name>` : ask ChatGPT to create a bash script that uses the input language (`<lang-name>`) under the hood.<br>
+**Available `<lang-name>` values:**
+`python`, `bash`, `javascript`, `typescript`, `java`, `c`, `c++`, `c#`, `rust`, `swift`, `go`, `ruby`, `php`
