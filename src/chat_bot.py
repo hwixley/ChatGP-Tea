@@ -25,11 +25,26 @@ class Main():
                         print(f"\nERROR: Invalid language: {lang}")
                 else:
                     print("\nERROR: No language specified.")
+            elif arg0 == "convo":
+                print("\nWhat would you like to ask?")
+                question = input()
+
+                while question != "exit":
+                    response = self.openaiService.get_response(question)
+                    print(f"\nResponse:\n{response}")
+                    print("\nWhat would you like to ask?")
+                    question = input()                    
             else:
                 print(f"\nERROR: Invalid argument: {args[0]}")
         else:
-            response = main.ask_lang_question()
-            main.format_lang_response(response)
+            print("\nWhat would you like to ask?")
+            question = input()
+
+            while question != "exit":
+                response = self.openaiService.get_response(question)
+                print(f"\nResponse:\n{response}")
+                print("\nWhat would you like to ask?")
+                question = input()  
 
     def ask_question(self):
         print("\nWhat would you like to ask?")

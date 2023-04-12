@@ -6,6 +6,7 @@ class OpenAIService():
     def __init__(self, api_key):
         self.api_key = api_key
         self.engine = "gpt-3.5-turbo"
+        self.messages = []
         self.setup()
 
     def setup(self):
@@ -14,15 +15,20 @@ class OpenAIService():
     def get_response(self, prompt):
         completion = openai.ChatCompletion.create(
             model=self.engine,
-            messages=[
+            messages= self.messages + [
                 {
                     "role": "user",
                     "content": prompt
                 },
             ]
         )
+        response = completion.choices[0].message.content
+        self.messages.append({
+            "role": "system",
+            "content": prompt
+        })
 
-        return completion.choices[0].message.content
+        return response
 
     def get_lang_response(self, prompt, language=languages.Languages().get_language("python")):
         message = f"Return a {language.name} script that can do the following: \"{prompt}\". Please use backticks (```) to indicate the start and end of the script, and represent all arguments using the \"arg\" prefix and a number to represent the number argument (ie. arg1 for the first argument)."
