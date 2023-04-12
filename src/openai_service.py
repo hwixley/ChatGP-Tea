@@ -1,4 +1,5 @@
 import openai
+import languages
 
 class OpenAIService():
 
@@ -23,6 +24,6 @@ class OpenAIService():
 
         return completion.choices[0].message.content
 
-    def get_lang_response(self, prompt, language="python"):
-        message = f"Return a {language} script that can do the following: \"{prompt}\". Please use backticks (```) to indicate the start and end of the script, and represent all arguments using the \"arg\" prefix and a number to represent the number argument (ie. arg1 for the first argument)."
+    def get_lang_response(self, prompt, language=languages.Languages().get_language("python")):
+        message = f"Return a {language.name} script that can do the following: \"{prompt}\". Please use backticks (```) to indicate the start and end of the script, and represent all arguments using the \"arg\" prefix and a number to represent the number argument (ie. arg1 for the first argument)."
         return self.get_response(message)
