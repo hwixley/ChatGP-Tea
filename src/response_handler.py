@@ -6,8 +6,11 @@ class ResponseHandler():
     def __init__(self, response):
         self.response = response
 
+    def regexString(self, str):
+        return str.replace("+","\+")
+
     def findCodeBlocks(self, lang=languages.Languages().get_language("python")):
-        cb_regex = f"\`\`\`({lang.name})*\n((.|\n)*)\`\`\`"
+        cb_regex = f"\`\`\`({self.regexString(lang.name)})*\n((.|\n)*)\`\`\`"
         return re.findall(cb_regex, self.response)
     
     def findArgs(self):
