@@ -1,0 +1,9 @@
+user: will this work
+
+system: I'm sorry, but your question is incomplete. Can you please provide more context and details so I can better understand what you are referring to?
+
+user: i am referring to the script i am running right now to talk to you via your api
+
+system: Ah, I see! Yes, if you are able to send and receive messages through the API using your current script, then it is working correctly. 
+
+Is there anything else you need assistance with regarding the use of the OpenAI API?

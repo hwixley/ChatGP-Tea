@@ -13,19 +13,16 @@ class OpenAIService():
         openai.api_key = self.api_key
 
     def get_response(self, prompt):
+        message = { "role": "user", "content": prompt }
         completion = openai.ChatCompletion.create(
             model=self.engine,
-            messages= self.messages + [
-                {
-                    "role": "user",
-                    "content": prompt
-                },
-            ]
+            messages= self.messages + [message]
         )
         response = completion.choices[0].message.content
+        self.messages.append(message)
         self.messages.append({
             "role": "system",
-            "content": prompt
+            "content": response
         })
 
         return response
@@ -37,5 +34,4 @@ class OpenAIService():
     def save_conversation(self, fname):
         with open(f'conversations/{fname}.txt', 'w') as f:
             for message in self.messages:
-                f.write(f"{message['role']}: {message['content']}")
-                
+                f.write(f"{message['role']}: {message['content']}\n\n")
