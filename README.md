@@ -1,7 +1,7 @@
-# `ChatGP-Tea CLI` ☕️
+# ChatGP-Tea CLI ☕️
 A CLI for talking to ChatGPT, and turning code blocks (language agnostic) from it's responses into executable shell commands.
 
-## `Setup`
+## Setup
 
 1. Create an API key on the OpenAI developer portal, and run the following command:
     ```
@@ -13,4 +13,4 @@ A CLI for talking to ChatGPT, and turning code blocks (language agnostic) from i
    echo "" >> ~/.bashrc && echo "alias gptea=\"source $(pwd)/gptea.sh\"" >> ~/.bashrc
    ```
 
-3. You are good to go! :)
+3. You are good to go! 🤠
