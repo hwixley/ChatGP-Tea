@@ -8,9 +8,9 @@ A CLI for talking to ChatGPT, and turning code blocks (language agnostic) from i
     export OPENAI_API_KEY=<your-api-key>
     ```
 
-2. Add the `gptea` alias for your script in `.bashrc` (or `.zshrc` for unix) for easy execution in any directory.
+2. Run the setup script. This will add the `gptea` alias for your script in `.bashrc` for easy execution in any directory, and add local directories (`generated-scripts/` and `conversations/`) for saving ChatGPT generated files or conversations.
    ```
-   echo "" >> ~/.bashrc && echo "alias gptea=\"source $(pwd)/gptea.sh\"" >> ~/.bashrc
+   chmod +x setup.sh && source setup.sh
    ```
 
 3. You are good to go! 🤠 Run `gptea` to get started

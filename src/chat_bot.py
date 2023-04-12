@@ -13,38 +13,49 @@ class Main():
         if n > 0:
             arg0 = args[0]
             if arg0 == "ask":
-                response = main.ask_question()
-                print(f"\nResponse:\n{response}")
+                self.get_response()
             elif arg0 == "lang":
                 if n > 1:
-                    lang = languages.Languages().get_language(args[1])
-                    if lang is not None:
-                        response = main.ask_lang_question(parseLanguage=lang)
-                        main.format_lang_response(response, lang=lang)
-                    else:
-                        print(f"\nERROR: Invalid language: {lang}")
+                    self.get_lang_response(args[1])
                 else:
                     print("\nERROR: No language specified.")
             elif arg0 == "convo":
-                print("\nWhat would you like to ask?")
-                question = input()
-
-                while question != "exit":
-                    response = self.openaiService.get_response(question)
-                    print(f"\nResponse:\n{response}")
-                    print("\nWhat would you like to ask?")
-                    question = input()                    
+                self.start_convo()                
             else:
                 print(f"\nERROR: Invalid argument: {args[0]}")
         else:
+            self.start_convo()
+
+    def start_convo(self):
+        print("\nWhat would you like to ask?")
+        question = input()
+
+        while question != "exit":
+            response = self.openaiService.get_response(question)
+            print(f"\nResponse:\n{response}")
             print("\nWhat would you like to ask?")
             question = input()
 
-            while question != "exit":
-                response = self.openaiService.get_response(question)
-                print(f"\nResponse:\n{response}")
-                print("\nWhat would you like to ask?")
-                question = input()  
+        print("Would you like to save this conversation? (y/n)")
+        save = input()
+        if save == "y":
+            print("\nWhat would you like to call this conversation?")
+            fname = input()
+            self.openaiService.save_conversation(fname)
+        
+        print("\nGoodbye!")
+
+    def get_response(self):
+        response = main.ask_question()
+        print(f"\nResponse:\n{response}")
+
+    def get_lang_response(self, lang):
+        lang = languages.Languages().get_language(lang)
+        if lang is not None:
+            response = main.ask_lang_question(parseLanguage=lang)
+            main.format_lang_response(response, lang=lang)
+        else:
+            print(f"\nERROR: Invalid language: {lang}")
 
     def ask_question(self):
         print("\nWhat would you like to ask?")
