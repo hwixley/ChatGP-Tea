@@ -8,17 +8,20 @@ A CLI for talking to ChatGPT:, saving conversation logs, and turning code blocks
     pip install -r requirements.txt
     ```
 
-2. Create an API key on the OpenAI developer portal, and run the following command:
+2. Create an API key on the OpenAI developer portal.
+3. Replace `YOUR_API_KEY` in the `.env` file with your OpenAI API key.
+    <br>OR<br>
+    You can run the following command: (however this does not get persisted on reboot)
     ```
     export OPENAI_API_KEY=<your-api-key>
     ```
 
-3. Run the setup script. This will add the `gptea` alias for your script in `.bashrc` for easy execution in any directory, and add local directories (`generated-scripts/` and `conversations/`) for saving ChatGPT: generated files or conversations.
+4. Run the setup script. This will add the `gptea` alias for your script in `.bashrc` for easy execution in any directory, and add local directories (`generated-scripts/` and `conversations/`) for saving ChatGPT: generated files or conversations.
    ```
    chmod +x setup.sh && source setup.sh
    ```
 
-4. You are good to go! 🤠 Run `gptea` to get started
+5. You are good to go! 🤠 Run `gptea` to get started.
 
 ## List of commands
 
