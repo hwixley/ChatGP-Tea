@@ -1,7 +1,7 @@
 # ChatGP-Tea CLI ☕️
 A CLI for talking to ChatGPT:, saving conversation logs, and turning code blocks (language agnostic) from it's responses into executable shell commands.
 
-<img src="https://preview.redd.it/u14x237fghva1.png?width=764&format=png&auto=webp&v=enabled&s=34e971b1ba58a6d4e4f5684c39d4de14ead41394">
+![Screenshot from 2023-04-22 19-56-19](https://user-images.githubusercontent.com/57837950/233849218-76dc5242-1fac-4886-b6f5-86f98d0e5165.png)
 
 ## Setup
 
