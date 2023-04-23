@@ -1,6 +1,12 @@
 # ChatGP-Tea CLI ☕️
 A CLI for talking to ChatGPT, saving conversation logs, and turning code blocks (language agnostic) from it's responses into executable shell commands.
 
+<hr>
+
+[![CODEQL](https://github.com/hwixley/ChatGP-Tea/actions/workflows/github-code-scanning/codeql/badge.svg)](https://hwixley.github.io/wix-cli/) ![License](https://img.shields.io/badge/License-MIT-purple?labelColor=gray&style=flat) ![Version](https://img.shields.io/badge/Version-0.1.0-blue?labelColor=gray&style=flat)
+
+<hr>
+
 ![Screenshot from 2023-04-22 19-56-19](https://user-images.githubusercontent.com/57837950/233849218-76dc5242-1fac-4886-b6f5-86f98d0e5165.png)
 
 ## Setup
