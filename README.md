@@ -1,5 +1,5 @@
 # ChatGP-Tea CLI ☕️
-A CLI for talking to ChatGPT:, saving conversation logs, and turning code blocks (language agnostic) from it's responses into executable shell commands.
+A CLI for talking to ChatGPT, saving conversation logs, and turning code blocks (language agnostic) from it's responses into executable shell commands.
 
 ![Screenshot from 2023-04-22 19-56-19](https://user-images.githubusercontent.com/57837950/233849218-76dc5242-1fac-4886-b6f5-86f98d0e5165.png)
 
