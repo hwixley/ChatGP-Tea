@@ -5,7 +5,8 @@ from termcolor import colored
 class Main():
 
     VERSION="0.1.0"
-    KEY_FILE=".env"
+    SCRIPT_PATH=os.path.dirname(os.path.realpath(__file__))
+    KEY_FILE="../.env"
     KEY_NAME="OPENAI_API_KEY"
 
     def __init__(self):
@@ -21,8 +22,8 @@ class Main():
 
         API_KEY = os.environ.get(self.KEY_NAME)
         if API_KEY == None:
-            if os.path.exists(self.KEY_FILE):
-                with open(self.KEY_FILE, "r") as f:
+            if os.path.exists(f"{self.SCRIPT_PATH}/{self.KEY_FILE}"):
+                with open(f"{self.SCRIPT_PATH}/{self.KEY_FILE}", "r") as f:
                     API_KEY = f.read().replace(f"{self.KEY_NAME}=", "")
             else:
                 self.error("No API key found.")

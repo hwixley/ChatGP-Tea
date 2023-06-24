@@ -1,3 +1,5 @@
 #!/bin/bash
 
-python3 src/chat_bot.py $@
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+python3 "$SCRIPT_DIR/src/chat_bot.py" "$@"
